@@ -92,12 +92,13 @@ class View:
             # TODO
             ft.Row(controls =[ft.Text("strumenti"),
                    self.button_mostra_strumenti] ),
-
+            self.lista_strumenti, #subito è vuota ma si popola quando clicco mostra
             ft.Divider(),
 
             # Sezione 4
             # TODO
-            ft.Row(controls=[self.input_tipo_strumento, self.button_mostra_strumenti_ricerca])
+            ft.Row(controls=[self.input_tipo_strumento, self.button_mostra_strumenti_ricerca]),
+            self.lista_strumenti_ricerca,
         )
 
     def cambia_tema(self, e):
