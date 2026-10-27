@@ -63,7 +63,14 @@ class View:
         pulsante_conferma_responsabile = ft.Button("Conferma", on_click=self.controller.conferma_responsabile)
 
         # Altri Pulsanti da implementare (es. "Mostra" e "Cerca")
-        # TODO
+        # TODO ci provo
+        #creo bottone per mostrare strumenti, il metodo di controller popula listview della view (lista_strumenti)
+        self.button_mostra_strumenti = ft.Button("mostra", on_click=self.controller.mostra_strumenti())
+
+        self.button_mostra_strumenti_ricerca = ft.Button("cerca", on_click=self.controller.get_strumenti_tipo())
+
+
+
 
         # --- LAYOUT ---
         self.page.add(
@@ -83,9 +90,14 @@ class View:
 
             # Sezione 3
             # TODO
+            ft.Row(controls =[ft.Text("strumenti"),
+                   self.button_mostra_strumenti] ),
+
+            ft.Divider(),
 
             # Sezione 4
             # TODO
+            ft.Row(controls=[self.input_tipo_strumento, self.button_mostra_strumenti_ricerca])
         )
 
     def cambia_tema(self, e):
