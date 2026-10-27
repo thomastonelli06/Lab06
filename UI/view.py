@@ -64,10 +64,10 @@ class View:
 
         # Altri Pulsanti da implementare (es. "Mostra" e "Cerca")
         # TODO ci provo
-        #creo bottone per mostrare strumenti, il metodo di controller popula listview della view (lista_strumenti)
-        self.button_mostra_strumenti = ft.Button("mostra", on_click=self.controller.mostra_strumenti())
+        #creo bottoni per mostrare strumenti, il metodo di controller popula listview della view (lista_strumenti)
+        self.button_mostra_strumenti = ft.Button("mostra", on_click=self.controller.mostra_strumenti)
 
-        self.button_mostra_strumenti_ricerca = ft.Button("cerca", on_click=self.controller.get_strumenti_tipo())
+        self.button_mostra_strumenti_ricerca = ft.Button("cerca", on_click=self.controller.get_strumenti_tipo)
 
 
 

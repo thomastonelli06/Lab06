@@ -30,16 +30,24 @@ class Controller:
     # Altre Funzioni Event Handler
     # TODO ci provo
 
-    def mostra_strumenti(self):  #per il tasto mostra strumenti dell listview della view
+    def mostra_strumenti(self, e):  #per il tasto mostra strumenti dell listview della view
         strumenti = self._model.get_strumenti()
+        if strumenti is None:  #se connessione con database fallisce
+            self._view.show_alert("Impossibile collegarsi al database")
+            return
         self._view.lista_strumenti.controls.clear()
         for strumento in strumenti:
             self._view.lista_strumenti.controls.append(ft.Text(str(strumento)))
 
         self._view.update()
 
-    def get_strumenti_tipo(self,):  #come prima ma per la ricerca
+    def get_strumenti_tipo(self, e):  #come prima ma per la ricerca
+        tipo = self._view.input_tipo_strumento.value  #.value perchè prende valore dentro textfield
         strumenti = self._model.cerca_strumenti_per_tipo(tipo)
+        if strumenti is None:
+            self._view.show_alert("Impossibile collegarsi al database")
+            return
+
         self._view.lista_strumenti_ricerca.controls.clear() #pulire lista per non avere duplicati
         for strumento in strumenti:
             self._view.lista_strumenti_ricerca.controls.append(ft.Text(str(strumento)))

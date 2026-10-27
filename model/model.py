@@ -54,9 +54,10 @@ class DepositoStrumenti:
             nuovoStrumento = Strumento(codice, tipo, marca, anno, valore, disponibile)
             listaStrumenti.append(nuovoStrumento)
 
+        conn.close()
         return listaStrumenti
 
-        conn.close()
+
 
 
 
@@ -90,7 +91,8 @@ class DepositoStrumenti:
             nuovoStrumento = Strumento(codice, tipo, marca, anno, valore, disponibile)
             listaStrumentiTipo.append(nuovoStrumento)
 
+        conn.close()
         return listaStrumentiTipo
 
-        conn.close()
+
 
